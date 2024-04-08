@@ -112,6 +112,81 @@ paths:
           description: Datos inválidos proporcionados
         '404':
           description: Partido no encontrado
+  /estadisticas:
+    get:
+      summary: Obtiene estadísticas generales de la liga
+      responses:
+        '200':
+          description: Estadísticas generales de la liga
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstadisticasGenerales'
+  /estadisticas/equipos/{id}:
+    get:
+      summary: Obtiene estadísticas específicas de un equipo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Estadísticas específicas de un equipo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstadisticasEquipo'
+        '404':
+          description: Equipo no encontrado
+  /estadisticas/partidos/{id}:
+    get:
+      summary: Obtiene estadísticas específicas de un partido
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Estadísticas específicas de un partido
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EstadisticasPartido'
+        '404':
+          description: Partido no encontrado
+  /estadisticas/externas:
+    get:
+      summary: Obtiene estadísticas desde una API externa
+      parameters:
+        - name: apiKey
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: tipoEstadistica
+          in: query
+          required: true
+          schema:
+            type: string
+            enum: [general, equipo, partido]
+      responses:
+        '200':
+          description: Estadísticas obtenidas de la API externa
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '401':
+          description: API Key no válida o faltante
+        '403':
+          description: Acceso a la API externa denegado
+        '500':
+          description: Error al obtener datos de la API externa
 components:
   schemas:
     Equipo:
@@ -141,4 +216,37 @@ components:
         golesLocal:
           type: integer
         golesVisitante:
+          type: integer
+    EstadisticasGenerales:
+      type: object
+      properties:
+        partidosJugados:
+          type: integer
+        golesTotales:
+          type: integer
+        tarjetasRojas:
+          type: integer
+        tarjetasAmarillas:
+          type: integer
+    EstadisticasEquipo:
+      type: object
+      properties:
+        partidosGanados:
+          type: integer
+        partidosPerdidos:
+          type: integer
+        golesAFavor:
+          type: integer
+        golesEnContra:
+          type: integer
+    EstadisticasPartido:
+      type: object
+      properties:
+        posesionEquipoLocal:
+          type: integer
+        posesionEquipoVisitante:
+          type: integer
+        tirosAlArcoLocal:
+          type: integer
+        tirosAlArcoVisitante:
           type: integer
