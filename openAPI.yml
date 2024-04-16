@@ -5,7 +5,9 @@ info:
   version: 1.0.0
 servers:
   - url: 'http://localhost:3000'
-    description: Servidor de desarrollo
+    description: Servidor de desarrollo  # URL base para el servidor de desarrollo
+
+# Definición de las rutas disponibles en la API
 paths:
   /equipos:
     get:
@@ -32,15 +34,12 @@ paths:
           description: Equipo creado exitosamente
         '400':
           description: Datos inválidos proporcionados
+
   /equipos/{id}:
     get:
       summary: Obtiene los detalles de un equipo específico
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/IdParam'
       responses:
         '200':
           description: Detalles de un equipo
@@ -50,6 +49,7 @@ paths:
                 $ref: '#/components/schemas/Equipo'
         '404':
           description: Equipo no encontrado
+
   /partidos:
     get:
       summary: Lista todos los partidos
@@ -75,15 +75,12 @@ paths:
           description: Partido creado exitosamente
         '400':
           description: Datos inválidos proporcionados
+
   /partidos/{id}/resultado:
     get:
       summary: Obtiene el resultado de un partido específico
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/IdParam'
       responses:
         '200':
           description: Resultado del partido
@@ -94,11 +91,7 @@ paths:
     put:
       summary: Actualiza el resultado de un partido específico
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/IdParam'
       requestBody:
         required: true
         content:
@@ -112,6 +105,7 @@ paths:
           description: Datos inválidos proporcionados
         '404':
           description: Partido no encontrado
+
   /estadisticas:
     get:
       summary: Obtiene estadísticas generales de la liga
@@ -122,15 +116,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EstadisticasGenerales'
+
   /estadisticas/equipos/{id}:
     get:
       summary: Obtiene estadísticas específicas de un equipo
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/IdParam'
       responses:
         '200':
           description: Estadísticas específicas de un equipo
@@ -140,15 +131,12 @@ paths:
                 $ref: '#/components/schemas/EstadisticasEquipo'
         '404':
           description: Equipo no encontrado
+
   /estadisticas/partidos/{id}:
     get:
       summary: Obtiene estadísticas específicas de un partido
       parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: integer
+        - $ref: '#/components/parameters/IdParam'
       responses:
         '200':
           description: Estadísticas específicas de un partido
@@ -158,36 +146,18 @@ paths:
                 $ref: '#/components/schemas/EstadisticasPartido'
         '404':
           description: Partido no encontrado
-  /estadisticas/externas:
-    get:
-      summary: Obtiene estadísticas desde una API externa
-      parameters:
-        - name: apiKey
-          in: query
-          required: true
-          schema:
-            type: string
-        - name: tipoEstadistica
-          in: query
-          required: true
-          schema:
-            type: string
-            enum: [general, equipo, partido]
-      responses:
-        '200':
-          description: Estadísticas obtenidas de la API externa
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties: true
-        '401':
-          description: API Key no válida o faltante
-        '403':
-          description: Acceso a la API externa denegado
-        '500':
-          description: Error al obtener datos de la API externa
+
+# Componentes reutilizables como parámetros y esquemas de objetos
 components:
+  parameters:
+    IdParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        description: El ID único para identificar recursos
+
   schemas:
     Equipo:
       type: object
@@ -198,6 +168,7 @@ components:
           type: string
         estadio:
           type: string
+
     Partido:
       type: object
       properties:
@@ -210,6 +181,7 @@ components:
         fecha:
           type: string
           format: date-time
+
     Resultado:
       type: object
       properties:
@@ -217,6 +189,7 @@ components:
           type: integer
         golesVisitante:
           type: integer
+
     EstadisticasGenerales:
       type: object
       properties:
@@ -228,6 +201,7 @@ components:
           type: integer
         tarjetasAmarillas:
           type: integer
+
     EstadisticasEquipo:
       type: object
       properties:
@@ -239,6 +213,7 @@ components:
           type: integer
         golesEnContra:
           type: integer
+
     EstadisticasPartido:
       type: object
       properties:
