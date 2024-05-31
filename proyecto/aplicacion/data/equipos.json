@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "nombre": "Sociedad",
+        "estadio": "Reale Arena"
+    },
+    {
+        "id": 2,
+        "nombre": "Granada",
+        "estadio": "Nuevo Los Cármenes"
+    },
+    {
+        "id": 3,
+        "nombre": "Recreativo",
+        "estadio": "Nuevo Colombino"
+    },
+    {
+        "id": 4,
+        "nombre": "Hercules",
+        "estadio": "José Rico Pérez"
+    },
+    {
+        "id": 5,
+        "nombre": "Leganes",
+        "estadio": "Butarque"
+    },
+    {
+        "id": 6,
+        "nombre": "Celta",
+        "estadio": "Abanca-Balaídos"
+    },
+    {
+        "id": 7,
+        "nombre": "Real Madrid",
+        "estadio": "Santiago Bernabéu"
+    },
+    {
+        "id": 8,
+        "nombre": "Getafe",
+        "estadio": "Coliseum Alfonso Pérez"
+    },
+    {
+        "id": 9,
+        "nombre": "Sp Gijon",
+        "estadio": "El Molinón"
+    },
+    {
+        "id": 10,
+        "nombre": "Levante",
+        "estadio": "Ciutat de València"
+    },
+    {
+        "id": 11,
+        "nombre": "Eibar",
+        "estadio": "Ipurua"
+    },
+    {
+        "id": 12,
+        "nombre": "Elche",
+        "estadio": "Martínez Valero"
+    },
+    {
+        "id": 13,
+        "nombre": "Espanol",
+        "estadio": "RCDE Stadium"
+    },
+    {
+        "id": 14,
+        "nombre": "Vallecano",
+        "estadio": "Vallecas"
+    },
+    {
+        "id": 15,
+        "nombre": "Villareal",
+        "estadio": "Estadio de la Cerámica"
+    },
+    {
+        "id": 16,
+        "nombre": "Salamanca",
+        "estadio": "Helmántico"
+    },
+    {
+        "id": 17,
+        "nombre": "Albacete",
+        "estadio": "Carlos Belmonte"
+    },
+    {
+        "id": 18,
+        "nombre": "Cadiz",
+        "estadio": "Nuevo Mirandilla"
+    },
+    {
+        "id": 19,
+        "nombre": "Valladolid",
+        "estadio": "José Zorrilla"
+    },
+    {
+        "id": 20,
+        "nombre": "Malaga",
+        "estadio": "La Rosaleda"
+    },
+    {
+        "id": 21,
+        "nombre": "Valencia",
+        "estadio": "Mestalla"
+    },
+    {
+        "id": 22,
+        "nombre": "La Coruna",
+        "estadio": "Riazor"
+    },
+    {
+        "id": 23,
+        "nombre": "Xerez",
+        "estadio": "Chapín"
+    },
+    {
+        "id": 24,
+        "nombre": "Tenerife",
+        "estadio": "Heliodoro Rodríguez López"
+    },
+    {
+        "id": 25,
+        "nombre": "Villarreal",
+        "estadio": "Estadio de la Cerámica"
+    },
+    {
+        "id": 26,
+        "nombre": "Compostela",
+        "estadio": "San Lázaro"
+    },
+    {
+        "id": 27,
+        "nombre": "Gimnastic",
+        "estadio": "Nou Estadi Costa Daurada"
+    },
+    {
+        "id": 28,
+        "nombre": "Extremadura",
+        "estadio": "Francisco de la Hera"
+    },
+    {
+        "id": 29,
+        "nombre": "Las Palmas",
+        "estadio": "Gran Canaria"
+    },
+    {
+        "id": 30,
+        "nombre": "Oviedo",
+        "estadio": "Carlos Tartiere"
+    },
+    {
+        "id": 31,
+        "nombre": "Zaragoza",
+        "estadio": "La Romareda"
+    },
+    {
+        "id": 32,
+        "nombre": "Barcelona",
+        "estadio": "Camp Nou"
+    },
+    {
+        "id": 33,
+        "nombre": "Huesca",
+        "estadio": "El Alcoraz"
+    },
+    {
+        "id": 34,
+        "nombre": "Merida",
+        "estadio": "Estadio Romano"
+    },
+    {
+        "id": 35,
+        "nombre": "Almeria",
+        "estadio": "Juegos Mediterráneos"
+    },
+    {
+        "id": 36,
+        "nombre": "Betis",
+        "estadio": "Benito Villamarín"
+    },
+    {
+        "id": 37,
+        "nombre": "Cordoba",
+        "estadio": "Nuevo Arcángel"
+    },
+    {
+        "id": 38,
+        "nombre": "Mallorca",
+        "estadio": "Son Moix"
+    },
+    {
+        "id": 39,
+        "nombre": "Ath Madrid",
+        "estadio": "Wanda Metropolitano"
+    },
+    {
+        "id": 40,
+        "nombre": "Ath Bilbao",
+        "estadio": "San Mamés"
+    },
+    {
+        "id": 41,
+        "nombre": "Sevilla",
+        "estadio": "Ramón Sánchez-Pizjuán"
+    },
+    {
+        "id": 42,
+        "nombre": "Osasuna",
+        "estadio": "El Sadar"
+    },
+    {
+        "id": 43,
+        "nombre": "Numancia",
+        "estadio": "Los Pajaritos"
+    },
+    {
+        "id": 44,
+        "nombre": "Logrones",
+        "estadio": "Las Gaunas"
+    },
+    {
+        "id": 45,
+        "nombre": "Santander",
+        "estadio": "El Sardinero"
+    },
+    {
+        "id": 46,
+        "nombre": "Girona",
+        "estadio": "Montilivi"
+    },
+    {
+        "id": 47,
+        "nombre": "Murcia",
+        "estadio": "Nueva Condomina"
+    },
+    {
+        "id": 48,
+        "nombre": "Alaves",
+        "estadio": "Mendizorroza"
+    }
+]

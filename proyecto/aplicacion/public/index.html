@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football API Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Football API Interface</h1>
+    <button id="loadEquipos">Cargar Equipos</button>
+    <button id="loadPartidos">Cargar Partidos</button>
+    <button id="loadTopScorers">Cargar Máximos Goleadores</button>
+    <button id="closeEquipos">Cerrar Equipos</button>
+    <button id="closePartidos">Cerrar Partidos</button>
+    <button id="closeTopScorers">Cerrar Máximos Goleadores</button>
+    <div>
+        <h2>Equipos</h2>
+        <table id="equiposTable">
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Estadio</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div>
+        <h2>Partidos</h2>
+        <form id="filterForm">
+            <label for="startDate">Fecha de inicio:</label>
+            <input type="date" id="startDate" name="startDate">
+            <label for="endDate">Fecha de fin:</label>
+            <input type="date" id="endDate" name="endDate">
+            <button type="submit">Filtrar</button>
+        </form>
+        <ul id="partidosList"></ul>
+        <button id="prevPage">Página Anterior</button>
+        <button id="nextPage">Página Siguiente</button>
+        <div id="partidosDetails"></div>
+    </div>
+    <div>
+        <h2>Máximos Goleadores</h2>
+        <ul id="topScorersList"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
