@@ -6,18 +6,18 @@ Miriam Jimenez Jimenez, Enrique Collado Muñoz, Ignacio Martín-Peña Chinchurre
 ## Instalación y uso
 
 Una vez clonado el repositorio, y navegado a la raíz de la aplicación. Ejecute los siguientes comandos:
-1.⁠ ⁠Instalación de dependencias
+1. Instalación de dependencias
 
-⁠ bash
+```bash
   npm install
- ⁠
-2.⁠ ⁠Carga de datos iniciales
+```
+2. Carga de datos iniciales
 
-⁠ bash
+```bash
   node /data/loadInitialData.js
- ⁠
-3.⁠ ⁠Ejecución de la app
-⁠ bash
+```
+3. Ejecución de la app
+```bash
   node app.js
- ⁠
+```
 La aplicación escucha en el puerto 3000 de HTTP.
