@@ -1,11 +1,9 @@
-// routes/equipos.js
 const express = require('express');
 const router = express.Router();
-const equipoController = require('../controllers/equipoController');
+const equiposController = require('../controllers/equipoController');
 
-router.get('/', equipoController.getAllEquipos);
-router.post('/', equipoController.createEquipo);
-router.get('/:id', equipoController.getEquipoById);
+router.get('/', equiposController.getAllEquipos);
+router.get('/:id', equiposController.getEquipoById);
+router.post('/', equiposController.createEquipo);
 
 module.exports = router;
-

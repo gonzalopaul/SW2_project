@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterForm = document.getElementById('filterForm');
     const partidosDetails = document.getElementById('partidosDetails');
 
+    const loadNBATeamsBtn = document.getElementById('loadNBATeams');
+    const loadNBAPlayersBtn = document.getElementById('loadNBAPlayers');
+    const loadNBAGamesBtn = document.getElementById('loadNBAGames');
+    const nbaTeamsList = document.getElementById('nbaTeamsList');
+    const nbaPlayersList = document.getElementById('nbaPlayersList');
+    const nbaGamesList = document.getElementById('nbaGamesList');
+
     let currentPage = 1;
 
     loadEquiposBtn.addEventListener('click', loadEquipos);
@@ -38,6 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         loadPartidos(currentPage);
     });
+
+    loadNBATeamsBtn.addEventListener('click', loadNBATeams);
+    loadNBAPlayersBtn.addEventListener('click', loadNBAPlayers);
+    loadNBAGamesBtn.addEventListener('click', loadNBAGames);
 
     async function loadEquipos() {
         try {
@@ -115,6 +126,52 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (error) {
             console.error('Error al cargar los máximos goleadores:', error);
+        }
+    }
+
+    // New functions for balldontlie API
+    async function loadNBATeams() {
+        try {
+            const response = await fetch('/api/teams');
+            const data = await response.json();
+            nbaTeamsList.innerHTML = '';
+            data.data.forEach(team => {
+                const li = document.createElement('li');
+                li.textContent = `${team.full_name} (${team.abbreviation}) - ${team.city}`;
+                nbaTeamsList.appendChild(li);
+            });
+        } catch (error) {
+            console.error('Error al cargar equipos NBA:', error);
+        }
+    }
+
+    async function loadNBAPlayers() {
+        try {
+            const response = await fetch('/api/players');
+            const data = await response.json();
+            nbaPlayersList.innerHTML = '';
+            data.data.forEach(player => {
+                const li = document.createElement('li');
+                li.textContent = `${player.first_name} ${player.last_name} - ${player.team.full_name}`;
+                nbaPlayersList.appendChild(li);
+            });
+        } catch (error) {
+            console.error('Error al cargar jugadores NBA:', error);
+        }
+    }
+
+    async function loadNBAGames() {
+        try {
+            const response = await fetch('/api/games');
+            const data = await response.json();
+            nbaGamesList.innerHTML = '';
+            data.data.forEach(game => {
+                const li = document.createElement('li');
+                li.textContent = `${game.home_team.full_name} vs ${game.visitor_team.full_name} - ${new Date(game.date).toLocaleDateString()}`;
+                nbaGamesList.appendChild(li);
+            });
+        } catch (error) {
+            console.error('Error al cargar partidos NBA:', error);
         }
     }
 });
